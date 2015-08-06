@@ -1,0 +1,13 @@
+
+
+<% @creatures.each do |creature| %>
+  <div>Name: <%= creature.name %></div>
+  <div>Description: <%= creature.description %></div>
+  <div>
+  <%= button_to 'show', creature_path(creature), method: :get %>
+  <%= button_to 'edit', edit_creature_path(creature), method: :get %>
+  <%= button_to 'delete', creature_path(creature),
+            method: :delete,
+            data: {confirm: "are you sure?"} %>
+</div>
+<% end %>
